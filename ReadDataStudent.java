@@ -2,10 +2,10 @@ import java.util.Scanner;
 import java.io.File;
 
 
-public class ReadData-Student{
+public class ReadDataStudent{
     //I hard-coded the number of rows and columns so 
     //I could use a 2D array
-    private double[][] data = new double[...][...];
+    private double[][] data = new double[21908][14];
 
     //This should read in the csv file and store the data in a 2D array,
     //data -- don't forget to skip the header line and parse everything
@@ -18,7 +18,9 @@ public class ReadData-Student{
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] lineArr = line.split(",");
-                ...
+                for(int x = 0; x < lineArr.length; x++){
+                    Double.parseDouble(lineArr[x]);
+                }
                 row++;
             }
             scanner.close();
@@ -35,8 +37,10 @@ public class ReadData-Student{
     //this should return a double array of the column
     //of data
     public double[] getColumn(int col){
-        double[] column = ...
-        ...
+        double[] column = new double[data.length];
+        for(int x = 0; x < data.length; x++){
+            column[x] = data[x][col];
+        }
         return column;
     }
 
@@ -88,7 +92,7 @@ public class ReadData-Student{
     }
     
     public void runRegression(){
-        // double[] x = getColumn(7);
+        double[] x = getColumn(7);
         // double[] y = getColumn(9);
         // double[] xStd = standardUnits(x);
         // double[] yStd = standardUnits(y);
@@ -110,9 +114,9 @@ public class ReadData-Student{
         System.out.println();
     }
     public static void main(String[] args) {
-        ReadData rd = new ReadData();
+        ReadDataStudent rd = new ReadDataStudent();
         rd.read();
-        rd.runRegression();
+        //rd.runRegression();
     }
 
 }
