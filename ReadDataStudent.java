@@ -18,7 +18,9 @@ public class ReadDataStudent{
             while(scanner.hasNextLine()){
                 String line = scanner.nextLine();
                 String[] lineArr = line.split(",");
-                    Double.parseDouble(lineArr[row]);
+                for(int x = 0; x < lineArr.length; x++){
+                    Double.parseDouble(lineArr[x]);
+                }
                 row++;
             }
             scanner.close();
