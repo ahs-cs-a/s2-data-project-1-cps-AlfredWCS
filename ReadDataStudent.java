@@ -19,7 +19,7 @@ public class ReadDataStudent{
                 String line = scanner.nextLine();
                 String[] lineArr = line.split(",");
                 for(int x = 0; x < lineArr.length; x++){
-                    Double.parseDouble(lineArr[x]);
+                    data[row][x] = Double.parseDouble(lineArr[x]);
                 }
                 row++;
             }
@@ -55,6 +55,7 @@ public class ReadDataStudent{
     public double stdDeviation(double[] arr){
         double sum = 0;
         double mean = ...
+        arr[x]
         ...
         return .. //sample variance!
     }
